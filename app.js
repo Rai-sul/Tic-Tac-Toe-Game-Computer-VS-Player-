@@ -3,7 +3,6 @@ let resetButton = document.querySelector("#resetGame");
 let newGameButton = document.querySelector("#newGame");
 let msgContainer = document.querySelector(".msg_container");
 let dis_msg = document.querySelector("#msg");
-let turn0 = true;
 
 const winningPattern = [
   [0, 1, 2],
@@ -57,16 +56,13 @@ const compChoice = () => {
   } else {
     compChoice();
   }
-  turn0 = false;
 };
 
 // Define the callback function "outside"
 const handleClick = (box) => {
   box.innerText = "0";
   box.disabled = true;
-  turn0 = false;
   compChoice();
-  turn0 = true;
   checkWinner();
 };
 // Add event listener with reference to the callback function
